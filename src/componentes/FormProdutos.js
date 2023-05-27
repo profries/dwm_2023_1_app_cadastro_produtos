@@ -9,7 +9,8 @@ export default function FormProdutos() {
         event.preventDefault();
         API.post("/produtos", {
             nome: nome,
-            preco: preco
+            preco: parseFloat(preco),
+            imagem: "/res/pedigree.jpg"
         }).then((response) => {
             alert("Produto cadastrado com sucesso!");
             console.log(response.data);
@@ -20,15 +21,17 @@ export default function FormProdutos() {
 
     return (
         <form onSubmit = {cadastrarProduto}>
-            <label for="nome">Nome:</label>
+            <label htmlFor="nome">Nome:</label>
             <input type="text" 
+                id="nome"
                 name="nome"
                 value={nome}
                 onChange={(ev) => setNome(ev.target.value)}>
             </input>                
             <br />
-            <label for="preco">Preço:</label>
+            <label htmlFor="preco">Preço:</label>
             <input type="number" 
+                id="preco"
                 name="preco"
                 value={preco}
                 onChange={(ev) => setPreco(ev.target.value)}>

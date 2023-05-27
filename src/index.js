@@ -5,13 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FormProdutos from './componentes/FormProdutos';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ListProdutos from './componentes/ListProdutos';
+import Sobre from './componentes/Sobre';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="cadastro" element={<FormProdutos />} />
+      <Route path="/" element={<App />}>
+        <Route index element={<ListProdutos />} />
+        <Route path="cadastro" element={<FormProdutos />} />
+        <Route path="sobre" element={<Sobre />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 

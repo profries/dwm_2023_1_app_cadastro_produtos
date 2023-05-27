@@ -1,8 +1,7 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
 import Carroussel from './componentes/Carroussel';
-import ListProdutos from './componentes/ListProdutos';
 import Menu from './componentes/Menu';
-import produtos from './data/produtos.json';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
           <h1>Exercicio da Aula</h1>
         </div>
         <Carroussel></Carroussel>
-        <ListProdutos></ListProdutos>
+        <Outlet></Outlet>
       </main>
     </>
 );

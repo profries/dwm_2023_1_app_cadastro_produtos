@@ -14,7 +14,7 @@ export default function ListProdutos() {
 
 
     return (
-        <section class="w3-row w3-container w3-margin-top">
+        <section className="w3-row w3-container w3-margin-top">
         {  produtos.map( prod => 
                 <CardProduto key={prod.id} produto={prod}></CardProduto>
             )}
